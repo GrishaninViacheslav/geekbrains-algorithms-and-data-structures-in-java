@@ -1,8 +1,7 @@
 package io.github.grishaninvyacheslav.lesson_1.task_1;
 
 import static io.github.grishaninvyacheslav.utils.ConsoleOutputs.*;
-import static io.github.grishaninvyacheslav.utils.Loopers.*;
-import static io.github.grishaninvyacheslav.utils.Wrappers.*;
+import static io.github.grishaninvyacheslav.utils.loopers.Range.*;
 
 public class Implementation {
     public static void main(String[] args) {
@@ -15,10 +14,10 @@ public class Implementation {
         if(exponent < 0){
             throw new ArithmeticException(String.format("\nЗначение exponent меньше нуля:\nexponent: %d", exponent));
         }
-        ObjectWrapper<Integer> result = new ObjectWrapper<>(base);
-        repeat(exponent, () ->
-                result.value *= base
-        );
-        return result.value;
+        int result = base;
+        for(int i : range(exponent)){
+            result *= base;
+        }
+        return result;
     }
 }
