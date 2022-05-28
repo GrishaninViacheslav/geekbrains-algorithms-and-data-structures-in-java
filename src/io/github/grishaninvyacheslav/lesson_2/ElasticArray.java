@@ -54,6 +54,20 @@ public class ElasticArray<E> {
         size++;
     }
 
+    public void add(E value, int index){
+        if (index < 0 || index > size) {
+            throw new ArrayIndexOutOfBoundsException(String.format("Индекс %s выходит за грницы диапазона длинной в %s", index, size));
+        }
+        if (size + 1 == elementData.length) {
+            grow();
+        }
+        for(int i : range(size, index)){
+            elementData[i] = elementData[i-1];
+        }
+        elementData[index] = value;
+        size++;
+    }
+
     public void removeByIndex(int index) {
         if (index < 0 || index >= size) {
             throw new ArrayIndexOutOfBoundsException(String.format("Индекс %s выходит за грницы диапазона длинной в %s", index, size));
