@@ -78,6 +78,16 @@ public class ElasticArray<E> {
         return false;
     }
 
+    public boolean clear() {
+        if (size == 0) {
+            return false;
+        } else {
+            elementData = new Object[DEFAULT_CAPACITY];
+            size = 0;
+            return true;
+        }
+    }
+
     public boolean removeByValues(E... values) {
         boolean isAtLeastOneValueRemoved = false;
         for (int i = 0; i < size; i++) {
