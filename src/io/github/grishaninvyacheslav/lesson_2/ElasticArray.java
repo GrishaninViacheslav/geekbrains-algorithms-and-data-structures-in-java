@@ -78,6 +78,21 @@ public class ElasticArray<E> {
         return false;
     }
 
+    public boolean removeByValues(E... values) {
+        boolean isAtLeastOneValueRemoved = false;
+        for (int i = 0; i < size; i++) {
+            for(E value: values){
+                if(elementData[i] == value){
+                    removeByIndex(i);
+                    isAtLeastOneValueRemoved = true;
+                    i--;
+                    break;
+                }
+            }
+        }
+        return isAtLeastOneValueRemoved;
+    }
+
     protected void grow() {
         Object[] newElementData = new Object[elementData.length + GROWTH];
         System.arraycopy(elementData, 0, newElementData, 0, size);
