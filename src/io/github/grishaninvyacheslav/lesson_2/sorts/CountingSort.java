@@ -1,6 +1,7 @@
 package io.github.grishaninvyacheslav.lesson_2.sorts;
 
 import static io.github.grishaninvyacheslav.utils.loopers.Range.*;
+import static io.github.grishaninvyacheslav.utils.Arrays.*;
 
 public class CountingSort {
 
@@ -23,32 +24,6 @@ public class CountingSort {
                     sortedPartBound++;
                 }
             }
-        }
-    }
-
-    private static int getMinValue(int[] array) {
-        int result = array[0];
-        for (int i : range(1, array.length)) {
-            if (array[i] < result) {
-                result = array[i];
-            }
-        }
-        return result;
-    }
-
-    private static int getMaxValue(int[] array) {
-        int result = array[0];
-        for (int i : range(1, array.length)) {
-            if (array[i] > result) {
-                result = array[i];
-            }
-        }
-        return result;
-    }
-
-    private static void fillArrayWithValue(int[] array, int value) {
-        for (int i : range(0, array.length)) {
-            array[i] = value;
         }
     }
 }

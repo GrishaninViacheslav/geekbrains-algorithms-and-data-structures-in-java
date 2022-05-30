@@ -1,6 +1,8 @@
 package io.github.grishaninvyacheslav.lesson_2.sorts;
 
 import java.util.Stack;
+import static io.github.grishaninvyacheslav.utils.Arrays.*;
+
 
 public class PumpedBubbleSort {
 
@@ -72,19 +74,5 @@ public class PumpedBubbleSort {
         }
         swapValues(array, sortRangeEnd - 1, secondHalfStartIndex);
         return secondHalfStartIndex;
-    }
-
-    /**
-     * Меняет местами знаяения элементов массива.
-     *
-     * @param array  массив элементы которого поменяются местами
-     * @param aIndex индекс элемента, которому будет присвоено значение bIndex
-     * @param bIndex индекс элемента, которому будет присвоено значение aIndex
-     * @param <E>    тип элемента массива.
-     */
-    private static <E> void swapValues(E[] array, int aIndex, int bIndex) {
-        E temp = array[aIndex];
-        array[aIndex] = array[bIndex];
-        array[bIndex] = temp;
     }
 }
