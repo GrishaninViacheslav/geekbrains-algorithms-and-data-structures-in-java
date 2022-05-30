@@ -3,7 +3,7 @@ package io.github.grishaninvyacheslav.lesson_2.sorts;
 import static io.github.grishaninvyacheslav.utils.loopers.Range.*;
 import static io.github.grishaninvyacheslav.utils.Arrays.*;
 
-public class CountingSort {
+public class CountingSort implements IntArraySorter {
 
     public static void countingSort(int[] sortArray) {
         int minValue = getMinValue(sortArray);
@@ -25,5 +25,10 @@ public class CountingSort {
                 }
             }
         }
+    }
+
+    @Override
+    public void sort(Integer[] sortArray) {
+        sort(sortArray);
     }
 }

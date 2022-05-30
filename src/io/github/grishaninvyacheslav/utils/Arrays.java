@@ -1,5 +1,7 @@
 package io.github.grishaninvyacheslav.utils;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import static io.github.grishaninvyacheslav.utils.loopers.Range.range;
 
 public class Arrays {
@@ -24,6 +26,12 @@ public class Arrays {
         }
     }
 
+    public static void fillArrayWithRandomValues(Integer[] array){
+        for(int i : range(0, array.length)){
+            array[i] = ThreadLocalRandom.current().nextInt();
+        }
+    }
+
     public static int getMinValue(int[] array) {
         int result = array[0];
         for (int i : range(1, array.length)) {
@@ -42,5 +50,14 @@ public class Arrays {
             }
         }
         return result;
+    }
+
+    public static boolean isSorted(Integer[] array){
+        for(int i: range(1, array.length)){
+            if(array[i] < array[i - 1]){
+                return false;
+            }
+        }
+        return true;
     }
 }

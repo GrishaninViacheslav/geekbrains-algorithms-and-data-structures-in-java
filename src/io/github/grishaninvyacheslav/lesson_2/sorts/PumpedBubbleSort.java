@@ -4,7 +4,7 @@ import java.util.Stack;
 import static io.github.grishaninvyacheslav.utils.Arrays.*;
 
 
-public class PumpedBubbleSort {
+public class PumpedBubbleSort implements IntArraySorter{
 
     /**
      * Улучшенная сортировка пузырьком.
@@ -74,5 +74,10 @@ public class PumpedBubbleSort {
         }
         swapValues(array, sortRangeEnd - 1, secondHalfStartIndex);
         return secondHalfStartIndex;
+    }
+
+    @Override
+    public void sort(Integer[] sortArray) {
+        pumpedBubbleSort(sortArray);
     }
 }
