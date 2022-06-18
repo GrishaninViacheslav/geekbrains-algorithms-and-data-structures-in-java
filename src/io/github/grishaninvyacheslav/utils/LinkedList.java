@@ -1,8 +1,8 @@
 package io.github.grishaninvyacheslav.utils;
 
 public class LinkedList<E> {
-    private Node head = null;
-    private Node tail = null;
+    public Node<E> head = null;
+    public Node<E> tail = null;
 
     public void pushLast(E value) {
         if (isEmpty()) {
@@ -65,7 +65,7 @@ public class LinkedList<E> {
         return tail == null;
     }
 
-    private class Node {
+    public static class Node<E> {
         public E value;
         public Node prev;
         public Node next;
